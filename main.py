@@ -10,9 +10,6 @@ def is_leap_year(year):
         return True
 
 def main():
-    print("闰年判断程序")
-    print("============")
-    
     while True:
         try:
             # 获取用户输入
@@ -25,10 +22,13 @@ def main():
                 
             # 尝试将输入转换为整数
             year = int(user_input)
-            
+
+            if year < 0:
+                print(f"{year}不是闰年 \n")
+                continue
             # 检查年份是否为正数
-            if year <= 0:
-                print("错误：请输入一个有效的正数年份。\n")
+            if year == 0:
+                print(f"{year}是闰年 \n")
                 continue
                 
             # 判断是否为闰年并显示结果
@@ -39,7 +39,7 @@ def main():
                 
         except ValueError:
             # 处理非数字输入
-            print("错误：请输入有效的数字年份。\n")
+            print("输入错误: 请输入有效的数字年份。\n")
 
 if __name__ == "__main__":
     main()
